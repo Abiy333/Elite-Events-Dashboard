@@ -1,0 +1,145 @@
+/* EventDashboard.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.dashboard-wrapper {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.elite-title {
+  text-align: center;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #d4af37; /* Gold accent */
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Form Styling */
+.creation-engine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.input-premium {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-premium:focus {
+  border-color: #d4af37;
+}
+
+.btn-create {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-create:hover {
+  background: #333;
+}
+
+/* Table Styling */
+.premium-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.premium-table th {
+  background: #1a1a1a;
+  color: #d4af37; /* Gold text on dark header */
+  padding: 18px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.premium-table td {
+  padding: 18px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.premium-table tr:hover {
+  background-color: #fafafa;
+}
+
+/* Action Buttons & Badges */
+.btn-action {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-book {
+  background: #d4af37;
+  color: #1a1a1a;
+}
+
+.btn-book:hover:not(:disabled) {
+  background: #b5952f;
+}
+
+.btn-book:disabled {
+  background: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.btn-delete {
+  background: #ff4757;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #ff1e34;
+}
+
+.badge-sold-out {
+  background: #ff4757;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap;
+}

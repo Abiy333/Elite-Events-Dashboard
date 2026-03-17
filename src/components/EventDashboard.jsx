@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { eventPackages } from "../data/packages";
+import "./EventDashboard.css";
 
 export default function EventDashboard() {
   const [packages, setPackages] = useState(() => {
@@ -47,27 +48,37 @@ export default function EventDashboard() {
   }, [packages]);
 
   return (
-    <div>
-      <h2>Active Events pkgs</h2>
-      <form action="" onSubmit={addPackage}>
+    <div className="dashboard-wrapper">
+      <center>
+        <h2 className="creation-engine">Active Events Packages</h2>
+      </center>
+      <form action="" onSubmit={addPackage} className="creation-engine">
         <input
           type="text"
           onChange={(e) => setnewTitle(e.target.value)}
           value={newTitle}
+          placeholder="Package Name"
+          className="input-premium"
         />
         <input
           type="number"
           onChange={(e) => setnewPrice(e.target.value)}
           value={newPrice}
+          placeholder="Price (N)"
+          className="input-premium"
         />
         <input
           type="number"
           onChange={(e) => setnewSpots(e.target.value)}
           value={newSpots}
+          placeholder="Available Spots"
+          className="input-premium"
         />
-        <button>Create Package</button>
+        <button type="submit" className="btn-create">
+          Create Package
+        </button>
       </form>
-      <table>
+      <table className="premium-table">
         <thead>
           <tr>
             <th>Packages</th>
@@ -82,15 +93,23 @@ export default function EventDashboard() {
               <td>{pkg.title}</td>
               <td>{pkg.price}</td>
               <td>
-                {pkg.availableSpots > 0 ? pkg.availableSpots : "SOLD OUT"}
+                {pkg.availableSpots > 0 ? (
+                  pkg.availableSpots
+                ) : (
+                  <span className="badge-sold-out"> "SOLD OUT" </span>
+                )}
               </td>
               <td>
-                <button onClick={() => deletePkg(pkg.id)}>
+                <button
+                  onClick={() => deletePkg(pkg.id)}
+                  className="btn-delete btn-action"
+                >
                   Delete Package
                 </button>
                 <button
                   onClick={() => bookSpot(pkg.id)}
                   disabled={pkg.availableSpots === 0}
+                  className="btn-book btn-action"
                 >
                   Book Spot
                 </button>
