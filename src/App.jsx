@@ -1,10 +1,14 @@
 import EventDashboard from "./components/EventDashboard";
+import ClientBooking from "./components/ClientBooking";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
-    <div>
-      <h1>Elite Events Management</h1>;
-      <EventDashboard />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<ClientBooking />} />
+        <Route path="/admin" element={<EventDashboard />} />
+      </Routes>
+    </>
   );
 }
