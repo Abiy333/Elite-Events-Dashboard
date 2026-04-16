@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { eventPackages } from "../data/packages";
 import "./EventDashboard.css";
+import DashboardEasterEgg from "./DashboardEasterEgg";
+import BentoDashboard from "./BentoDashboard";
 
 export default function EventDashboard() {
   const [packages, setPackages] = useState(() => {
@@ -49,6 +51,7 @@ export default function EventDashboard() {
 
   return (
     <div className="dashboard-wrapper">
+      <BentoDashboard />
       <center>
         <h2 className="creation-engine">Active Events Packages</h2>
       </center>
@@ -118,6 +121,7 @@ export default function EventDashboard() {
           ))}
         </tbody>
       </table>
+      <DashboardEasterEgg />
     </div>
   );
 }
