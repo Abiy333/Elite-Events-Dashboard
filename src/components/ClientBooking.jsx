@@ -1,22 +1,15 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./ClientBooking.css";
+import { useNavigate } from "react-router-dom";
 
 export default function ClientBooking() {
-  const [publicEvents, setPublicEvents] = useState([]);
-
-  useEffect(() => {
+  const [publicEvents, setPublicEvents] = useState(() => {
     const savedData = localStorage.getItem("elitePackage");
-    if (savedData) {
-      setPublicEvents(JSON.parse(savedData));
-    }
-  }, []);
+    return savedData ? JSON.parse(savedData) : [];
+  });
+  const navigate = useNavigate();
 
-  /* const savedData = localStorage.getItem("elitePackage");
-   if (savedData) {
-     return JSON.parse(savedData);
-  }
-  return eventPackages;*/
   return (
     <div className="client-page-wrapper">
       <center>
@@ -42,6 +35,9 @@ export default function ClientBooking() {
 
             {/* The Client Booking Button */}
             <button
+              onClick={() =>
+                navigate("/checkout", { state: { selectedEvent: event } })
+              }
               className="btn-client-book"
               disabled={event.availableSpots === 0}
             >

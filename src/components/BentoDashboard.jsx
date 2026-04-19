@@ -11,7 +11,7 @@ export default function BentoDashboard() {
           <h2 className="text-gray-400 text-sm tracking-widest uppercase font-semibold mb-2">
             Total Revenue
           </h2>
-          <p className="text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400 mb-2">
+          <p className="text-5xl font-black bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-cyan-400 mb-2">
             $124,500
           </p>
           <span className="text-emerald-500 font-medium bg-emerald-500/10 px-3 py-1 rounded-full text-sm">

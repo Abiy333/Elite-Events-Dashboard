@@ -6,7 +6,7 @@ export default function EventCard() {
       <div className="bg-white border border-gray-100 rounded-2xl shadow-md overflow-hidden">
         <div className="h-48 w-full relative">
           {/*TOP SECTION: Image*/}
-          <div className="w-full h-full bg-gradient-to-br from-indigo-100 to-purple-100"></div>
+          <div className="w-full h-full bg-linear-to-br from-indigo-100 to-purple-100"></div>
 
           {/* Floating Date Badge (Needs to sit ON TOP of the image) */}
           <div className="absolute top-4 right-4 bg-white px-3 py-2 rounded-xl shadow-lg flex flex-col items-center leading-none">

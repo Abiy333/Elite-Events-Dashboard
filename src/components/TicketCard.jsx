@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import valentineImage from "/valentine-package.jfif";
 
 export default function TicketCard() {
