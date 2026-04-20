@@ -7,6 +7,7 @@ import EventCard from "./components/EventCard";
 import StorefrontLanding from "./components/StorefrontLanding";
 import Dashboard from "./components/Dashboard";
 import CheckoutForm from "./components/CheckoutForm";
+import KanbanBoard from "./components/KanbanBoard";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/events" element={<ClientBooking />} />
           <Route path="/checkout" element={<CheckoutForm />} />
+          <Route path="/ops" element={<KanbanBoard />} />
         </Routes>
       </div>
     </div>

@@ -1,11 +1,11 @@
 // src/components/Dashboard.jsx
 import React from "react";
 import { useAuth } from "./AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
-  const { state } = useAuth(); // We only need the state here, not dispatch
-
-  // The Bouncer: If they aren't authenticated, kick them out
+  const { state } = useAuth();
+  const navigate = useNavigate();
   if (!state.isAuthenticated) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-950">
@@ -23,6 +23,12 @@ export default function Dashboard() {
       <p className="text-gray-400">
         Security Level: {state.role.toUpperCase()}
       </p>
+      <button
+        onClick={() => navigate("/ops")}
+        className="flex my-5 bg-rose-600 hover:bg-rose-500 text-white px-5 py-2 rounded-lg font-bold text-lg transition-colors tracking-tight"
+      >
+        Open Operations Board
+      </button>
 
       {/* Your table of attendees would go here */}
       <div className="mt-8 p-8 border border-gray-800 rounded-xl">

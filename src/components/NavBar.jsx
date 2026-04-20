@@ -29,7 +29,7 @@ export default function NavBar() {
         </div>
 
         {/* Middle Section: The Links */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-2 mx-7 px-5">
           <Link
             to="/"
             style={{
@@ -53,22 +53,22 @@ export default function NavBar() {
             Book Event
           </Link>
 
-          {/* THE UPGRADE: The Admin link is now completely hidden unless the user is logged in AND is an admin */}
           {state.isAuthenticated && state.role === "admin" && (
-            <Link
-              to="/admin"
-              style={{
-                color: "#d4af37",
-                textDecoration: "none",
-                fontWeight: "bold",
-              }}
-            >
-              Admin Dashboard
-            </Link>
+            <>
+              <Link
+                to="/admin"
+                style={{
+                  color: "#d4af37",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                Admin Dashboard
+              </Link>
+            </>
           )}
         </div>
 
-        {/* Right Section: The Auth Engine */}
         <div className="flex items-center gap-4">
           {/* Conditional Rendering based on the global state */}
           {state.isAuthenticated ? (
