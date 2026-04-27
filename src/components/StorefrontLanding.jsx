@@ -1,4 +1,7 @@
 import ResponsiveHero from "./ResponsiveHero";
+import laptop from "../assets/laptop-resolution.webp";
+import phone from "../assets/phone-resolution.webp";
+import tablet from "../assets/tablet-resolution.webp";
 
 export default function StorefrontLanding() {
   return (
@@ -7,9 +10,9 @@ export default function StorefrontLanding() {
         {/* We pass the API URLs directly into the props */}
         <ResponsiveHero
           altText="Elite Tech Conference 2026"
-          mobileImg="https://placehold.co/600x600/1f2937/ffffff?text=Mobile+Hero"
-          tabletImg="https://placehold.co/1200x500/374151/ffffff?text=Tablet+Hero"
-          desktopImg="https://placehold.co/2400x600/111827/ffffff?text=4K+Desktop+Hero"
+          mobileImg={phone}
+          tabletImg={tablet}
+          desktopImg={laptop}
         />
       </div>
     </main>
